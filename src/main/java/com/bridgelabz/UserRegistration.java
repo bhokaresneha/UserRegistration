@@ -116,9 +116,11 @@ public class UserRegistration
                String password=scanner.next();
 
                /*Regular Expression For Validating Password
-                *-At least 1 Upeer Case
+                *-Minimum 8 Character.
+                *-At least 1 Upeer Case.
+                *-At least 1 Numeric Number.
                  */
-               String regexPassword="^[A-Z]{1}[a-zA-Z]{7}$";
+               String regexPassword="^[A-Z]{1}[0-9]{1}[a-zA-Z]{6}$";
 
                /* the pattern is created using the Pattern.compile() method.
                  - passing regexPassword- which pattern is being searched for and the search should be case-insensitive
