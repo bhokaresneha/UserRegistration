@@ -5,7 +5,7 @@ public class UserRegistrationMain {
     public static void main(String[] args) {
         int choice;
         do {
-            System.out.println("Enter Your Choice \n1.Validate First Name  \n2.Validate Last Name \n3.Validate Email \n4.Validate Mobile Number \n5.Validate Password");
+           System.out.println("Enter Your Choice \n1.Validate First Name  \n2.Validate Last Name \n3.Validate Email \n4.Validate Mobile Number \n5.Validate Password");
             int Option = UserRegistration.scanner.nextInt();
             switch (Option) {
                 case 1:
