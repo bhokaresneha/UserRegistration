@@ -12,7 +12,7 @@ public class UserRegistrationMain {
                     UserRegistration.validFirstName();
                     break;
                 case 2:
-                    UserRegistration.validLastName();5
+                    UserRegistration.validLastName();
                     break;
                 case 3:
                     UserRegistration.validEmail();
