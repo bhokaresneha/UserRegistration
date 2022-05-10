@@ -13,8 +13,6 @@ public class UserRegistration
             {
                 System.out.print("Enter the First Name (First Latter Must be Capital ): ");
                 String name = scanner.next();
-                if (name.length() >= 3 )
-                {
                     String regex = "^[A-Z]{1}[a-z]{2,}$";
                     Pattern p = Pattern.compile(regex);
                     Matcher m = p.matcher(name);
@@ -24,10 +22,7 @@ public class UserRegistration
                         System.out.println("First name is valid");
                     else
                         System.out.println("First name is !Invalid");
-                } else
-                {
-                    System.out.print(" Minimum 3 Character Required");
-                }
+                
                 return r;
 
             }
@@ -37,8 +32,6 @@ public class UserRegistration
                 System.out.print("Enter the Last Name (First Latter Must be Capital): ");
                 String lastname = scanner.next();
 
-                if (lastname.length() >= 3 )
-                {
                     String regexlastname = "^[A-Z]{1}[a-z]{2,}$";
                     Pattern p1 = Pattern.compile(regexlastname);
                     Matcher m1 = p1.matcher(lastname);
@@ -47,11 +40,7 @@ public class UserRegistration
                         System.out.println("Last Name is valid");
                     else
                         System.out.println("Last Name is !Invalid");
-                } else
-                {
-                    System.out.print(" Minimum 3 Character Required");
-                }
-                return r;
+                    return r;
             }
 
             public static boolean validEmail()
