@@ -8,7 +8,8 @@ public class UserRegistration
 {
     public static final Scanner scanner = new Scanner(System.in);
     static boolean r;
-    public static boolean validFirstName()
+
+  public static boolean validFirstName()
     {
         System.out.print("Enter the First Name (First Latter Must be Capital ): ");
         String name = scanner.next();
@@ -30,6 +31,7 @@ public class UserRegistration
         return r;
 
     }
+
     public static boolean validLastName()
     {
         System.out.print("Enter the Last Name (First Latter Must be Capital): ");
@@ -51,5 +53,22 @@ public class UserRegistration
         }
         return r;
     }
+
+    public static boolean validEmail()
+    {
+        System.out.print("Enter the Email : ");
+        String email = scanner.next();
+        String regex = "^[a-z0-9]+@[a-z0-9]+.[a-z]{2,3}+.[a-z]{2,}$";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(email);
+        boolean r = m.matches();
+
+        if (r)
+            System.out.println("Email is valid.");
+        else
+            System.out.println("Email is invalid.");
+        return r;
+    }
+
 
 }
