@@ -115,19 +115,14 @@ public class UserRegistration
                 //Taking Input from the User
                String password=scanner.next();
 
-               /*Regular Expression For Validating Password
-                *-Minimum 8 Character.
-                *-At least 1 Upeer Case.
-                *-At least 1 Numeric Number.
-                 */
-               String regexPassword="^[A-Z]{1}[0-9]{1}[a-zA-Z]{6}$";
+               /*Regular Expression For Validating Password        */
+               String regexPassword="^(?=.*[A-Z])(?=.*[0-9]).{8}$";
 
-               /* the pattern is created using the Pattern.compile() method.
-                 - passing regexPassword- which pattern is being searched for and the search should be case-insensitive
-                * The matcher() method is used to search for the pattern in a string.
-                 -It returns a Matcher object which contains information about the search that was performed.
-                * The matches() method returns true if the pattern was found in the string and false if it was not found.
-                */
+               /*       *    (?=.*[0-9]) represents a digit must occur at least once.
+                        *    (?=.*[a-z]) represents a lower case alphabet must occur at least once.
+                        *    (?=.*[A-Z]) represents an upper case alphabet that must occur at least once.
+                        *    {8} represents at least 8 characters.
+         */
                Pattern p4=Pattern.compile(regexPassword);
                Matcher m4=p4.matcher(password);
                 boolean r4=m4.matches();
