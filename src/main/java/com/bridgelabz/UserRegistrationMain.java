@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class UserRegistrationMain {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         int choice;
         do {
             System.out.println("Enter Your Choice \n1.Validate First Name  \n2.Validate Last Name \n3.Validate Email");
@@ -23,6 +22,6 @@ public class UserRegistrationMain {
             }
             System.out.println("If you want to perform more validations then press 1");
             choice = UserRegistration.scanner.nextInt();
-        } while (choice == 1);
+        } while (choice == 1);       
     }
 }
