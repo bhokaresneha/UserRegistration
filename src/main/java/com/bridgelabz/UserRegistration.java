@@ -116,13 +116,14 @@ public class UserRegistration
                String password=scanner.next();
 
                /*Regular Expression For Validating Password        */
-               String regexPassword="^(?=.*[A-Z])(?=.*[0-9]).{8}$";
+               String regexPassword="^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()]).{8}$";
 
                /*       *    (?=.*[0-9]) represents a digit must occur at least once.
                         *    (?=.*[a-z]) represents a lower case alphabet must occur at least once.
                         *    (?=.*[A-Z]) represents an upper case alphabet that must occur at least once.
+                        *    (?=.*[@#$%^&-+=()]) represents a special character that must occur at least once.
                         *    {8} represents at least 8 characters.
-         */
+                */
                Pattern p4=Pattern.compile(regexPassword);
                Matcher m4=p4.matcher(password);
                 boolean r4=m4.matches();
