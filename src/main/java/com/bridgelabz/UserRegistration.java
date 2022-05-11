@@ -65,14 +65,7 @@ public class UserRegistration
                 //Taking Input from the User
                 String email = scanner.next();
                 //Regular Expression For Validating Email Address
-                String regexEmail = "^[a-zA-Z0-9._]+@[a-z0-9]+.[a-z]{2,3}+.[a-z]{2,}$";
-
-                /* the pattern is created using the Pattern.compile() method.
-                 - passing regexPassword- which pattern is being searched for and the search should be case-insensitive
-                * The matcher() method is used to search for the pattern in a string.
-                 -It returns a Matcher object which contains information about the search that was performed.
-                * The matches() method returns true if the pattern was found in the string and false if it was not found.
-                */
+                String regexEmail = "^[a-z]{3,}(.[-+a-z0-9]*)?@([a-z0-9]){1,}.[a-z]{2,}+(.[a-z]{2,})*";
                 Pattern p2 = Pattern.compile(regexEmail);
                 Matcher m2 = p2.matcher(email);
                 boolean r2 = m2.matches();
