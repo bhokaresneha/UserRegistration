@@ -1,3 +1,4 @@
+/*
 package com.bridgelabz;
 import java.util.Scanner;
 
@@ -30,4 +31,4 @@ public class UserRegistrationMain {
             choice = UserRegistration.scanner.nextInt();
         } while (choice == 1);       
     }
-}
+}*/
