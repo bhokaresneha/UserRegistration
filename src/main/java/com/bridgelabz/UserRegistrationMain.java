@@ -1,3 +1,4 @@
+/*
 package com.bridgelabz;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class UserRegistrationMain {
                     UserRegistration.validFirstName();
                     break;
                 case 2:
-                    UserRegistration.validLastName();5
+                    UserRegistration.validLastName();
                     break;
                 case 3:
                     UserRegistration.validEmail();
@@ -30,4 +31,4 @@ public class UserRegistrationMain {
             choice = UserRegistration.scanner.nextInt();
         } while (choice == 1);       
     }
-}
+}*/
