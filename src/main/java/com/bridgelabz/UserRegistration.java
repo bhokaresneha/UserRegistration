@@ -85,7 +85,7 @@ public class UserRegistration
             {
               /* System.out.println("Enter Password ");
                String password=scanner.next();*/
-                /*Regular Expression For Validating Password        */
+                //Regular Expression For Validating Password       
                 String regexPassword="^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()]).{8}$";
 
                 /*       *    (?=.*[0-9]) represents a digit must occur at least once.
