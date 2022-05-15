@@ -25,7 +25,7 @@ public class UserRegistration {
         if (r)
             System.out.println("First name is valid");
         else
-            System.out.println("First name is !Invalid");
+            throw new InvalidUserDataException(fname + "Invalid input");
 
         return r;
 
@@ -42,7 +42,7 @@ public class UserRegistration {
         if (r1)
             System.out.println("Last Name is valid");
         else
-            System.out.println("Last Name is !Invalid");
+            throw new InvalidUserDataException(lastname + "Invalid input");
         return r1;
     }
 
@@ -58,7 +58,7 @@ public class UserRegistration {
         if (r2)
             System.out.println("Email is valid.");
         else
-            System.out.println("Email is invalid.");
+            throw new InvalidUserDataException(email + "Invalid input");
         return r2;
     }
 
@@ -73,7 +73,7 @@ public class UserRegistration {
         if (r3)
             System.out.println("Phone number is Valid");
         else
-            System.out.println("Phone number is Invalid");
+            throw new InvalidUserDataException(phoneNo + "Invalid input");
         return r3;
     }
 
@@ -95,7 +95,7 @@ public class UserRegistration {
         if (r4)
             System.out.println("Password is valid");
         else
-            System.out.println("Password is Invalid ");
+            throw new InvalidUserDataException(password + "Invalid input");
         return r4;
     }
 
