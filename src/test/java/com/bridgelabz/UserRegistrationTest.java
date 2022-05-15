@@ -3,80 +3,126 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class UserRegistrationTest {
+    UserRegistration userRegistration=new UserRegistration();
+
     @Test
     public void testFor_Valid_FirstName(){
-        UserRegistration userRegistration=new UserRegistration();
-        boolean Firstname= userRegistration.validFirstName("Sneha");
-        //Assert.assertTrue() methods checks whether the expected value is true or not.
-        Assertions.assertTrue(Firstname);
-
+      try
+      {
+          Assertions.assertTrue(userRegistration.validFirstName("Sneha"));
+          //Assert.assertTrue() methods checks whether the expected value is true or not.
+      } catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
     @Test
     public void testFor_Valid_LastName(){
-        UserRegistration userRegistration=new UserRegistration();
-        boolean Lastname= userRegistration.validLastName("Bhokare");
-        Assertions.assertTrue(Lastname);
-
+        try
+        {
+            Assertions.assertTrue(userRegistration.validLastName("Bhokare"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
     @Test
     public void testFor_Valid_Email(){
-        UserRegistration userRegistration=new UserRegistration();
-        boolean email= userRegistration.validEmail("bhokare100@gmail.com.net");
-        Assertions.assertTrue(email);
-
+        try
+        {
+            Assertions.assertTrue(userRegistration.validEmail("bhokare100@gmail.com.net"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
     @Test
     public void testFor_Valid_Mobilenumber(){
-        UserRegistration userRegistration=new UserRegistration();
-        boolean phonenumber= userRegistration.validMobileNumber("91 9762689841");
-        Assertions.assertTrue(phonenumber);
-
+        try
+        {
+            Assertions.assertTrue(userRegistration.validMobileNumber("91 9762689841"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
     @Test
     public void testFor_Valid_Password(){
-        UserRegistration userRegistration=new UserRegistration();
-        boolean password=userRegistration.validatePassword("Sneha@12");
-        Assertions.assertTrue(password);
+        try
+        {
+            Assertions.assertTrue(userRegistration.validatePassword("Sneha@12"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
     //Tests For Invalid Output
     @Test
     public void testFor_Invalid_FirstName(){
-        UserRegistration userRegistration=new UserRegistration();
-        boolean Firstname= userRegistration.validFirstName("sneha");
-        Assertions.assertFalse(Firstname);
-
+        try
+        {
+            Assertions.assertFalse(userRegistration.validFirstName("sneha"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
     @Test
     public void testFor_Invalid_LastName(){
-        UserRegistration userRegistration=new UserRegistration();
-        boolean Lastname= userRegistration.validLastName("bhokare");
-        Assertions.assertFalse(Lastname);
-
+        try
+        {
+            Assertions.assertFalse(userRegistration.validLastName("bhokare"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
     @Test
     public void testFor_Invalid_Email(){
-        UserRegistration userRegistration=new UserRegistration();
-        boolean email= userRegistration.validEmail("bhokare100@.com.net");
-        Assertions.assertFalse(email);
-
+        try
+        {
+            Assertions.assertFalse(userRegistration.validEmail("bhokare100@.com.net"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
     @Test
     public void testFor_Invalid_Mobilenumber(){
-        UserRegistration userRegistration=new UserRegistration();
-        boolean phonenumber= userRegistration.validMobileNumber("91 97626899841");
-        Assertions.assertFalse(phonenumber);
-
+        try
+        {
+            Assertions.assertFalse(userRegistration.validMobileNumber("91 97626899841"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
     @Test
     public void testFor_Invalid_Password(){
-        UserRegistration userRegistration=new UserRegistration();
-        boolean password=userRegistration.validatePassword("Sneha@1245");
-        Assertions.assertFalse(password);
+        try
+        {
+            Assertions.assertFalse(userRegistration.validatePassword("Sneha@1245"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
+
+
 }
+
