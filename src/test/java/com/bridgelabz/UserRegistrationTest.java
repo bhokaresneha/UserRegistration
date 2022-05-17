@@ -8,97 +8,150 @@ import java.util.Arrays;
 public class UserRegistrationTest {
     UserRegistration userRegistration=new UserRegistration();
 
+    // test for Null Input
+    @Test
+    public void testFor_NULL(){
+        try
+        {
+            Assertions.assertTrue(UserRegistration.checkFname.validate(" "));
+            //Assert.assertTrue() methods checks whether the expected value is true or not.
+        } catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
+    }
+
+    // Test Case For Valid FirstName
     @Test
     public void testFor_Valid_FirstName(){
-        boolean Firstname= userRegistration.validFirstName("Sneha");
-        //Assert.assertTrue() methods checks whether the expected value is true or not.
-        Assertions.assertTrue(Firstname);
-
+      try
+      {
+          Assertions.assertTrue(UserRegistration.checkFname.validate("Sneha"));
+          //Assert.assertTrue() methods checks whether the expected value is true or not.
+      } catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
+    // Test Case For Valid LastName
     @Test
     public void testFor_Valid_LastName(){
-        boolean Lastname= userRegistration.validLastName("Bhokare");
-        Assertions.assertTrue(Lastname);
-
+        try
+        {
+            Assertions.assertTrue(userRegistration.checkLname.validate("Bhokare"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
+
+    // Test Case For Valid Email
     @Test
     public void testFor_Valid_Email(){
-
-        boolean email= userRegistration.validEmail("abc@yahoo.com.net");
-        Assertions.assertTrue(email);
-
+        try
+        {
+            Assertions.assertTrue(userRegistration.checkEmail.validate("bhokare100@gmail.com.net"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
+    // Test Case For Valid Mobile Number
     @Test
     public void testFor_Valid_Mobilenumber(){
-
-        boolean phonenumber= userRegistration.validMobileNumber("91 9762689841");
-        Assertions.assertTrue(phonenumber);
-
+        try
+        {
+            Assertions.assertTrue(userRegistration.checkMobileNumber.validate("91 9762689841"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
+    // Test Case For Valid Password
     @Test
     public void testFor_Valid_Password(){
-
-        boolean password=userRegistration.validatePassword("Sneha@12");
-        Assertions.assertTrue(password);
+        try
+        {
+            Assertions.assertTrue(userRegistration.checkPassword.validate("Sneha@12"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
-    //Tests For Invalid Output
+    //Test cases For Invalid Output
+
+    // Test Case For Invalid First Name
     @Test
     public void testFor_Invalid_FirstName(){
-
-        boolean Firstname= userRegistration.validFirstName("sneha");
-        Assertions.assertFalse(Firstname);
-
+        try
+        {
+            Assertions.assertFalse(UserRegistration.checkFname.validate("sneha"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
+    // Test Case For Invalid Last Name
     @Test
     public void testFor_Invalid_LastName(){
-        boolean Lastname= userRegistration.validLastName("bhokare");
-        Assertions.assertFalse(Lastname);
-
+        try
+        {
+            Assertions.assertFalse(userRegistration.checkLname.validate("bhokare"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
+
+    // Test Case For Invalid Email
     @Test
     public void testFor_Invalid_Email(){
-
-        boolean email= userRegistration.validEmail("bhokare100@.com.net");
-        Assertions.assertFalse(email);
-
+        try
+        {
+            Assertions.assertFalse(userRegistration.checkEmail.validate("bhokare100@.com.net"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
+    // Test Case For Invalid Mobile Number
     @Test
     public void testFor_Invalid_Mobilenumber(){
-        boolean phonenumber= userRegistration.validMobileNumber("91 97626899841");
-        Assertions.assertFalse(phonenumber);
-
+        try
+        {
+            Assertions.assertFalse(userRegistration.checkMobileNumber.validate("91 97626899841"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
 
+    // Test Case For Invalid Password
     @Test
     public void testFor_Invalid_Password(){
-        boolean password=userRegistration.validatePassword("Sneha@1245");
-        Assertions.assertFalse(password);
+        try
+        {
+            Assertions.assertFalse(userRegistration.checkPassword.validate("Sneha@1245"));
+        }
+        catch (InvalidUserDataException e)
+        {
+            System.out.println("Exception Occurs\n"+ e);
+        }
     }
-    @Test
-    public void testFor_valid_MultipleEmail(){
-        ArrayList<String> emails =new ArrayList<>(Arrays.asList("abc@yahoo.com.net","abc100@yahoo.com.in","abc.100@yahoo.com.in","abc111@abc.com.edu","abc0@abc.net.com"));
-        for(int i = 0;i< emails.size();i++) {
-            boolean password = userRegistration.validEmail(emails.get(i));
-            Assertions.assertTrue(password);
-        }
-        }
-        @Test
-        public void testFor_Invalid_MultipleEmail(){
-            ArrayList<String> emails =new ArrayList<>(Arrays.asList("abc@.com.my","abc","abc@abc.com","abc@gmail.com.1a","abc0@abc.n"));
-            for(int i = 0;i< emails.size();i++){
-                boolean password=userRegistration.validEmail(emails.get(i));
-                Assertions.assertFalse(password);
 
-            }
-
-
-
-        }
 
 }
 
